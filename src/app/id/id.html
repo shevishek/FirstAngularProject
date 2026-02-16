@@ -1,0 +1,9 @@
+<p>the details of:</p>
+<h2>{{ firstName }} {{lastName}}</h2>
+<p>id: {{id}}</p>
+<img #image src="{{ pictureName }}.png" alt="פרופיל"/>
+<p>born date: {{ bornDate }}</p>
+<p>your age is: {{ age() }} years old</p>
+<p>num of child: {{numOfChilds}}</p>
+
+<button (click)="changeVisibility(image)">{{ buttonText }}</button>
