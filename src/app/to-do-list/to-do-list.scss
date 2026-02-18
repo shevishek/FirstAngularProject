@@ -1,0 +1,21 @@
+:host {
+display: flex;
+flex-direction: row;
+align-items: center;
+margin: 3px;
+width: 800px;
+height: auto;
+}
+div{
+  display: flex;
+flex-direction:column;
+align-items: center;
+border: 2px solid;
+margin: 3px;
+height: 300px;
+width: auto;
+direction: rtl;  
+}
+.even{
+  background-color: antiquewhite;
+}

@@ -1,0 +1,36 @@
+@for (todo of todos; track todo.id; let i = $index) {
+  <div [style.background]="isLeft(todo.targetDate) ? 'lightgreen' : null"
+       [class.even]="$even"
+  >
+    <h2>{{ i }} - {{ todo.title }}</h2> 
+    <p>time: {{todo.targetDate}}</p>
+    <p> status:
+          @switch (todo.status) {
+            @case (0) {
+              ❌
+            }
+            @case (1) {
+              ⏳
+            }
+            @case (2) {
+              ✔
+            }
+            
+          }</p>
+      @if($index+1==$count){
+        <p>
+          this is your last task
+        </p>
+      }
+    <button [hidden]="todo.status == 2" (click)="setStatus(todo,2)">בוצע</button>
+    <button [hidden]="todo.status == 0" (click)="setStatus(todo,0)">לא בוצע</button>
+    <button [hidden]="todo.status == 1" (click)="setStatus(todo,1)">בתהליך</button>
+  </div>
+  
+}
+@empty {
+      <h2>no products...</h2>
+    }
+
+
+
